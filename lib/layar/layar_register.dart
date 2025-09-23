@@ -69,7 +69,7 @@ class _LayarRegisterState extends State<LayarRegister> {
 
               // Judul
               const Text(
-                'Buat Akun',
+                'Create Account',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -78,7 +78,7 @@ class _LayarRegisterState extends State<LayarRegister> {
               ),
               const SizedBox(height: 4),
               const Text(
-                'Bergabung bersama kami hari ini!',
+                'join us today!',
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.blue,
@@ -92,16 +92,16 @@ class _LayarRegisterState extends State<LayarRegister> {
                 child: Column(
                   children: [
                     // Input Nama Lengkap
-                    _buildTextField('Nama Lengkap', _controllerNamaLengkap, (value) {
+                    _buildTextField('Full Name', _controllerNamaLengkap, (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Nama lengkap wajib diisi';
+                        return 'Name cannot be empty';
                       }
                       return null;
                     }),
                     const SizedBox(height: 16),
 
                     // Input Nama Pengguna
-                    _buildTextField('Nama Pengguna', _controllerNamaPengguna, (value) {
+                    _buildTextField('Username', _controllerNamaPengguna, (value) {
                       if (value == null || value.isEmpty) {
                         return 'Nama pengguna wajib diisi';
                       }
@@ -122,7 +122,7 @@ class _LayarRegisterState extends State<LayarRegister> {
                     const SizedBox(height: 16),
 
                     // Input Kata Sandi
-                    _buildTextField('Kata Sandi', _controllerKataSandi, (value) {
+                    _buildTextField('Password', _controllerKataSandi, (value) {
                       if (value == null || value.isEmpty) {
                         return 'Kata sandi wajib diisi';
                       }
@@ -149,7 +149,7 @@ class _LayarRegisterState extends State<LayarRegister> {
                             child: TextButton(
                               onPressed: _daftar,
                               child: const Text(
-                                'Daftar',
+                                'Register',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,
@@ -166,7 +166,7 @@ class _LayarRegisterState extends State<LayarRegister> {
                             Navigator.pushReplacementNamed(context, '/masuk');
                           },
                           child: const Text(
-                            'Sudah punya akun? Masuk',
+                            'Alredy have an account? Sign In',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 14,
