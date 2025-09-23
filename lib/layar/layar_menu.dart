@@ -9,14 +9,14 @@ class LayarMenu extends StatefulWidget {
 }
 
 class _LayarMenuState extends State<LayarMenu> {
-  // Daftar menu makanan dan minuman
+  // Daftar menu makanan dan minuman (tanpa ikon)
   final List<Map<String, dynamic>> daftarMenu = [
-    {'nama': 'Nasi Goreng', 'harga': 25000, 'ikon': Icons.rice_bowl},
-    {'nama': 'Mie Goreng', 'harga': 20000, 'ikon': Icons.ramen_dining}, // changed
-    {'nama': 'Ayam Bakar', 'harga': 30000, 'ikon': Icons.outdoor_grill}, // changed
-    {'nama': 'Es Teh', 'harga': 5000, 'ikon': Icons.local_drink},
-    {'nama': 'Kopi', 'harga': 10000, 'ikon': Icons.coffee},
-    {'nama': 'Jus Jeruk', 'harga': 15000, 'ikon': Icons.local_drink_outlined},
+    {'nama': 'Nasi Goreng', 'harga': 25000},
+    {'nama': 'Mie Goreng', 'harga': 20000},
+    {'nama': 'Ayam Bakar', 'harga': 30000},
+    {'nama': 'Es Teh', 'harga': 5000},
+    {'nama': 'Kopi', 'harga': 10000},
+    {'nama': 'Jus Jeruk', 'harga': 15000},
   ];
 
   @override
@@ -35,12 +35,10 @@ class _LayarMenuState extends State<LayarMenu> {
               itemBuilder: (context, index) {
                 final item = daftarMenu[index];
                 final namaItem = item['nama'] as String;
-                final ikonItem = item['ikon'] as IconData;
 
                 return Card(
                   margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   child: ListTile(
-                    leading: Icon(ikonItem, size: 40),
                     title: Text(namaItem),
                     subtitle: Text('Rp ${item['harga']}'),
                     trailing: Row(
@@ -61,7 +59,10 @@ class _LayarMenuState extends State<LayarMenu> {
                         // Jumlah Pesanan
                         Text(
                           pesanan[namaItem].toString(),
-                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                         // Tombol Tambah
