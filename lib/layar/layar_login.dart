@@ -38,7 +38,7 @@ class _LayarLoginState extends State<LayarLogin> {
       } else {
         // Tampilkan pesan error
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Nama pengguna atau kata sandi salah!')),
+          const SnackBar(content: Text('username or password incorrect!')),
         );
       }
     }
@@ -65,7 +65,7 @@ class _LayarLoginState extends State<LayarLogin> {
 
               // Judul
               const Text(
-                'Selamat Datang Kembali',
+                'Welcome Back!',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -74,7 +74,7 @@ class _LayarLoginState extends State<LayarLogin> {
               ),
               const SizedBox(height: 4),
               const Text(
-                'Masuk untuk melanjutkan',
+                'Sign in to continue',
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.blue,
@@ -88,18 +88,18 @@ class _LayarLoginState extends State<LayarLogin> {
                 child: Column(
                   children: [
                     // Input Nama Pengguna
-                    _buildTextField('Nama Pengguna', _controllerNamaPengguna, (value) {
+                    _buildTextField('Ussername', _controllerNamaPengguna, (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Nama pengguna wajib diisi';
+                        return 'name cannot be empty';
                       }
                       return null;
                     }),
                     const SizedBox(height: 16),
 
                     // Input Kata Sandi
-                    _buildTextField('Kata Sandi', _controllerKataSandi, (value) {
+                    _buildTextField('Password', _controllerKataSandi, (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Kata sandi wajib diisi';
+                        return 'password cannot be empty';
                       }
                       return null;
                     }, isPassword: true),
@@ -121,7 +121,7 @@ class _LayarLoginState extends State<LayarLogin> {
                             child: TextButton(
                               onPressed: _masuk,
                               child: const Text(
-                                'Masuk',
+                                'Login',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,
@@ -138,7 +138,7 @@ class _LayarLoginState extends State<LayarLogin> {
                             Navigator.pushReplacementNamed(context, '/daftar');
                           },
                           child: const Text(
-                            'Belum punya akun? Daftar',
+                            'Dont have an account? Sign Up',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 14,
